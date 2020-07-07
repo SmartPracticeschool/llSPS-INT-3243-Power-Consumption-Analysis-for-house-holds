@@ -1,0 +1,7 @@
+Flask==1.0.2
+numpy==1.16.0
+pip==20.1.1
+joblib
+pillow
+gevent
+scikit-learn==0.22.1

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ML API</title>
+<style>
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Times New Roman;
+  color: white;
+  
+}
+
+
+
+h1  {
+  color: white;
+  font-family: Ariel;
+}
+body, new
+{
+    background-image : url("{{url_for('static',filename = 'led.jpg')}}");
+    
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+}
+body, login, new1
+{
+ padding : 15%;
+ left : 100%;
+
+}
+
+.login
+{
+    text-align : center;
+}
+
+login, button
+{
+border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width : 100%;
+  background-color: lightblue;  
+}
+
+login, row1
+{
+background-color:red; 
+color:black;
+}
+
+</style>
+
+</head>
+
+<body>
+      <div class="new"></div>  
+     
+      <div class="login">
+      
+      
+    
+	<h1>Household Power Consumption</h1>
+	
+	
+	
+    <form action="{{ url_for('y_predict')}}" method="post" class= "new1">
+    <table align="center">
+    
+        <tr>
+            <td>Global Reactive Power </td>
+            <td><input type="text" name="grp" required="required" /></td>
+        </tr>
+    
+        <tr>
+            <td>Voltage</td>
+            <td><input type="text"  name="voltage" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Global Intensity</td>
+    		<td><input type="text"  name="gi" required="required" /></td>
+    	</tr>	
+        <tr>
+            <td>Sub Metering 1</td>	
+            <td><input type="text"  name="sm1" required="required" /></td>
+    	</tr>
+    	<tr>	
+        	<td>Sub Metering 2</td>
+        	<td><input type="text"  name="sm2" required="required" /></td>
+		</tr>
+		<tr>
+    		<td>Sub Metering 3</td>
+    		<td><input type="text"  name="sm3" required="required" /><td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>
+          <button type="submit">Submit</button>
+          </td>
+        </tr>
+        </table>
+        
+    
+    </form>
+    <br>
+   <br>
+   {{ prediction_text }}
+  </div>
+</body>
+
+</html>
+
